@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--配置全局属性-->
+    <settings>
+        <!-- 允许 JDBC 支持自动生成主键 默认false-->
+        <setting name="useGeneratedKeys" value="true"/>
+
+        <!-- 开启驼峰命名规范 默认false -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+
+    </settings>
+
+</configuration>
