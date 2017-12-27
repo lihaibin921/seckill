@@ -15,11 +15,12 @@
     本项目专注于秒杀业务 不会过多设计其他部分
 
 ## dao层
-    对数据库的操作 整合mybatis和spring 没什么好说的
 ---
+    对数据库的操作 整合mybatis和spring 没什么好说的
+----
     使用接口+mapper.xml方式
     对于多对一的部分使用 别名映射
-    (不使用mybatis中的resultMap多对一映射 太复杂)
+    (不使用mybatis中的resultMap多对一映射 太复杂)
 
 ## service层
     新建了dto(data transfer object数据传输对象)包 用来存放
