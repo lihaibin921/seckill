@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EclipseCodeFormatterProjectSettings">
+    <option name="projectSpecificProfile">
+      <ProjectSpecificProfile>
+        <option name="eclipseVersion" value="CUSTOM" />
+        <option name="formatter" value="ECLIPSE" />
+        <option name="pathToConfigFileJava" value="G:/一些工具/styleguide-gh-pages/eclipse-java-google-style.xml" />
+        <option name="pathToEclipse" value="D:/eclipse" />
+        <option name="selectedJavaProfile" value="GoogleStyle" />
+      </ProjectSpecificProfile>
+    </option>
+  </component>
+</project>
