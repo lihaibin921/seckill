@@ -3,12 +3,13 @@
 
 ## 使用的技术
 + 项目管理 maven  
-+ dao层使用mybatis 
++ dao层mybatis 
 + 数据库mysql 
 + 连接池druid 
-+ service使用spring 
-+ web层使用springmvc 
-+ 日志使用logback
++ servicespring 
++ web层springmvc 
++ 日志logback
++ 前端bootstarp + jquery
 
 ## 数据库
     库中只有seckill 和 successKilled表 对于用户信息只是用phone代替
@@ -17,7 +18,7 @@
 ## dao层
 ---
     对数据库的操作 整合mybatis和spring 没什么好说的
-----
+---
     使用接口+mapper.xml方式
     对于多对一的部分使用 别名映射
     (不使用mybatis中的resultMap多对一映射 太复杂)
@@ -35,4 +36,10 @@
             (使此方法尽可能执行快 将缓存等操作放在外部执行)
         3 不是所有方法都需要事务           
              使用声明式开发很容易造成所有方法都开启事务 或者有需要事务的方法反而没有事务
+             
+##  web层
+    jsp使用bootstrap框架  js使用jquery(前端写的不多)  
+    完成Controller包的构建 采用restful风格构建url
+---
+    整合项目流程  测试通过  基本秒杀功能已经实现  接下来需要进行优化                           
 
