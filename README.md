@@ -10,6 +10,7 @@
 + web层springmvc 
 + 日志logback
 + 前端bootstarp + jquery
++ 缓存redis 缓存中的对象序列化采用 protostuff 速度快很多
 
 ## 数据库
     库中只有seckill 和 successKilled表 对于用户信息只是用phone代替
@@ -51,11 +52,18 @@
   而且存在用户重复秒杀，这样的操作是不用去占用行级锁的  
   改变顺序可以使得并发提高
 +  把执行逻辑放在Mysql上  
-  即使用Mysql的存储过程(Oracle的PL/SQL)  
-  这样可以有效减少延迟时间  
-+  增加NoSql(适用于分布式和集群)  
-  使用原子计数器来记录库存数量  
+  即使用Mysql的存储过程(类似Oracle的PL/SQL)  
+  这样可以有效减少延迟时间  (但是实际上互联网项目中使用不多)
++  增加redis缓存(适用于分布式和集群)  
+  (可以使用原子计数器来记录库存数量  
   通过消息队列的生产者记录行为  
-  消费者消费消息并落地到Mysql
-   
+  消费者消费消息并落地到Mysql 此处未实现)
+  
+### 解决一个坑
+
+    mysql中声明一个timestamp字段时一定要给default值
+    一般给'0000-00-00 00:00:00' 
+    不然默认default current_timestamp on update current_timestamp
+    更新数据时会自动更新时间
+   
 
