@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Param;
 import org.seckill.entity.Seckill;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public interface SeckillDao {
 
@@ -19,4 +20,6 @@ public interface SeckillDao {
      * 这样的描述 所以mybatis无法绑定参数 只好提供了这个注解 解决这个问题
      */
     List<Seckill> queryAll(@Param("offset") int offset, @Param("limit") int limit);
+
+    void killByProcedure(Map<String , Object> paramMap);
 }

@@ -10,6 +10,11 @@
 
     <!-- 统一管理jar包版本 -->
     <properties>
+        <!-- 固定编译版本为1.8 也可以使用编译器插件-->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!--统一管理依赖版本-->
+        <commons.collections>3.2.1</commons.collections>
         <junit.version>4.12</junit.version>
         <logback.version>1.2.3</logback.version>
         <mysql.version>5.1.44</mysql.version>
@@ -21,9 +26,19 @@
         <jstl.version>1.2</jstl.version>
         <javax.servlet-api.version>4.0.0</javax.servlet-api.version>
         <spring.version>4.3.8.RELEASE</spring.version>
+        <jedis.version>2.9.0</jedis.version>
+        <protostuff.version>1.5.2</protostuff.version>
     </properties>
 
+
     <dependencies>
+
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>${commons.collections}</version>
+        </dependency>
+
         <!-- junit4 -->
         <dependency>
             <groupId>junit</groupId>
@@ -121,6 +136,25 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
+        </dependency>
+
+        <!-- jedis -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>${jedis.version}</version>
+        </dependency>
+
+        <!-- protostuff 序列化-->
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-core</artifactId>
+            <version>${protostuff.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-runtime</artifactId>
+            <version>${protostuff.version}</version>
         </dependency>
 
     </dependencies>

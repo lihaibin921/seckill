@@ -37,12 +37,18 @@ public interface SeckillService {
 
     /**
      * 执行秒杀操作 抛出子类异常是为了告诉使用者 对子类异常明确指明异常信息
-     * 
+     *
      * @param seckillId
      * @param userPhone
      * @param md5
      */
     SeckillExecution executeSeckill(long seckillId, long userPhone, String md5)
             throws SeckillException, RepeatKillExcption, SeckillCloseException;
+
+
+    /**
+     * 执行秒杀操作 使用存储过程完成
+     */
+    SeckillExecution executeSeckillProcedure(long seckillId, long userPhone, String md5);
 
 }

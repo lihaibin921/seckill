@@ -87,7 +87,8 @@ public class SeckillController {
             produces = {"application/json;charset=UTF-8"})
     @ResponseBody
     public SeckillResult<SeckillExecution> execute(@PathVariable Long seckillId,
-            @PathVariable String md5, @CookieValue(value = "killPhone", required = false) Long phone) {
+            @PathVariable String md5,
+            @CookieValue(value = "killPhone", required = false) Long phone) {
         SeckillResult<SeckillExecution> result = null;
 
         System.out.println("手机号" + phone);
@@ -97,7 +98,9 @@ public class SeckillController {
         }
 
         try {
-            SeckillExecution execution = seckillService.executeSeckill(seckillId, phone, md5);
+            // SeckillExecution execution = seckillService.executeSeckill(seckillId, phone, md5);
+            SeckillExecution execution =
+                    seckillService.executeSeckillProcedure(seckillId, phone, md5);
             result = new SeckillResult<SeckillExecution>(true, execution);
         } catch (RepeatKillExcption e) {
             SeckillExecution seckillExecution =
